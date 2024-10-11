@@ -1,4 +1,4 @@
-# Node modules
+# Dependencies
 node_modules/
 
 # Logs
@@ -6,13 +6,13 @@ logs
 *.log
 npm-debug.log*
 
-# Environment variables
+# Environment Variables
 .env
 
-# OS files
+# OS Files
 .DS_Store
 Thumbs.db
 
-# Build directories
+# Build Directories
 dist/
 build/
