@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh; 
+    width: 100vw; 
+  }
+  
+  .image-section {
+    flex: 1;
+    background-color: #f0f5ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .lighthouse-image {
+    max-width: 950px;
+    height: 979px;
+  }
+  
+  .form-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+  }
+  
+  .form-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .form-section .brand-name {
+    color: #2979ff;
+    font-weight: bold;
+  }
+  
+  .form-section p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .input-group input {
+    width: 100%;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6e00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #ff5700;
+  }
+  
+  .already-member {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .already-member a {
+    color: #2979ff;
+    text-decoration: none;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .forgot-password a {
+    color: #2979ff;
+  }
+  
+  .sso {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .sso span {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .sso-btn {
+    padding: 10px;
+    background-color: #2979ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .sso-btn:hover {
+    background-color: #2164d8;
+  }
+  

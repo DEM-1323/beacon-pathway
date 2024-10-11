@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Beacon Pathway</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="image-section">
+      <img src="images/lighthouse.jpg"alt="Lighthouse" class="lighthouse-image">
+    </div>
+    <div class="form-section">
+      <h2>Sign up for <span class="brand-name">Beacon Pathway</span></h2>
+      <p>Join BeaconPathway today to discover personalized resources & connect with the UMB community!</p>
+      <form id="signupForm" action="/api/auth/register" method="POST">
+        <div class="input-group">
+          <input type="text" name="firstName" placeholder="First Name" required>
+          <input type="text" name="lastName" placeholder="Last Name" required>
+        </div>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </form>      
+      <p class="already-member">Already have an account? <a href="/login">Sign In</a></p>
+
+    </div>
+  </div>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', async function (e) {
+      e.preventDefault();  
+  
+      const formData = new FormData(e.target);
+      const data = {
+        firstName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
+        email: formData.get('email'),
+        password: formData.get('password'),
+        confirmPassword: formData.get('confirmPassword')
+      };
+  
+      try {
+        const response = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+  
+        const result = await response.json();
+  
+        if (response.ok) {
+            window.location.href = result.redirectUrl;
+        } else {
+            alert(result.msg); 
+            }
+
+      } catch (err) {
+        console.error('Error:', err);
+        alert('An error occurred. Please try again.');
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>
