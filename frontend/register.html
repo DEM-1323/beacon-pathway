@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sign Up | Beacon Pathway</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="container">
     <div class="image-section">
-      <img src="images/lighthouse.jpg"alt="Lighthouse" class="lighthouse-image">
+      <img src="images/lighthouse.jpg" alt="Lighthouse" class="lighthouse-image">
     </div>
     <div class="form-section">
       <h2>Sign up for <span class="brand-name">Beacon Pathway</span></h2>
@@ -25,13 +25,13 @@
         <button type="submit" class="submit-btn">Sign Up</button>
       </form>      
       <p class="already-member">Already have an account? <a href="/login">Sign In</a></p>
-
     </div>
   </div>
+  
   <script>
     document.getElementById('signupForm').addEventListener('submit', async function (e) {
       e.preventDefault();  
-  
+
       const formData = new FormData(e.target);
       const data = {
         firstName: formData.get('firstName'),
@@ -40,7 +40,7 @@
         password: formData.get('password'),
         confirmPassword: formData.get('confirmPassword')
       };
-  
+
       try {
         const response = await fetch('/api/auth/register', {
           method: 'POST',
@@ -49,22 +49,33 @@
           },
           body: JSON.stringify(data)
         });
-  
+
         const result = await response.json();
-  
+
         if (response.ok) {
-            window.location.href = result.redirectUrl;
+          window.location.href = result.redirectUrl;
         } else {
-            alert(result.msg); 
-            }
+          displayError(result.msg);
+        }
 
       } catch (err) {
         console.error('Error:', err);
-        alert('An error occurred. Please try again.');
+        displayError('An error occurred. Please try again.');
       }
     });
+
+    function displayError(message) {
+      // Create an error message element if it doesn't exist
+      let errorElement = document.getElementById('error-message');
+      if (!errorElement) {
+        errorElement = document.createElement('div');
+        errorElement.id = 'error-message';
+        errorElement.className = 'error-message';
+        document.querySelector('.form-section').prepend(errorElement);
+      }
+      errorElement.textContent = message;
+      errorElement.style.display = 'block';
+    }
   </script>
-  
-  
 </body>
 </html>
