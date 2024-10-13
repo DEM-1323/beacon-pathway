@@ -1,7 +1,11 @@
+// server.js
+
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
+const path = require('path');
+const cookieParser = require('cookie-parser'); // Import cookie-parser
 
 // Load environment variables
 require('dotenv').config();
@@ -12,12 +16,28 @@ const app = express();
 // Connect to database
 connectDB();
 
-const path = require('path'); // Include this at the top
+// Middleware
+app.use(cors({
+  origin: 'http://localhost:5000', // Adjust based on your frontend's origin
+  credentials: true // Allow cookies to be sent
+}));
+app.use(express.json({ extended: false })); // Parse JSON bodies
+app.use(cookieParser()); // Use cookie-parser to parse cookies
 
 // Serve static files from the 'frontend' folder
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Send the register page when user accesses the root or /register
+// API Routes
+app.use('/api/auth', authRoutes);
+
+// Protected Dashboard Route
+const auth = require('./middleware/auth'); // Import auth middleware
+
+app.get('/dashboard', auth, (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dashboard.html'));
+});
+
+// Serve HTML pages
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
@@ -27,18 +47,8 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/login.html'));
-  });  
-
-app.get('/dashboard', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/dashboard.html'));
-  });
-  
-app.use(cors());
-app.use(express.json({ extended: false }));
-
-// Use the authRoutes for handling user registration
-app.use('/api/auth', authRoutes);
+  res.sendFile(path.join(__dirname, '../frontend/login.html'));
+});
 
 const PORT = process.env.PORT || 5000;
 
