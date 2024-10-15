@@ -1,9 +1,12 @@
+<!-- frontend/login.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login | Beacon Pathway</title>
+  <!-- Ensure the path to styles.css is correct -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -12,20 +15,78 @@
       <img src="images/lighthouse.jpg" alt="Lighthouse" class="lighthouse-image">
     </div>
     <div class="form-section">
-      <h2>Sign in to <span class="brand-name">Beacon Pathway</span></h2>
-      <p>Hey there Beacon! Please enter your login details below to use the app</p>
+      <h2>Login to <span class="brand-name">Beacon Pathway</span></h2>
+      <p>Access your personalized resources and connect with the UMB community!</p>
       <form id="loginForm" action="/api/auth/login" method="POST">
         <input type="email" name="email" placeholder="Email Address" required>
         <input type="password" name="password" placeholder="Password" required>
-        <p class="forgot-password"><a href="#">Forgot your password?</a></p>
         <button type="submit" class="submit-btn">Login</button>
       </form>
+      <p class="already-member">Don't have an account? <a href="/register">Sign Up</a></p>
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
       <div class="sso">
-        <span>OR</span>
+        <span>Or login with:</span>
         <button class="sso-btn">UMB SSO</button>
       </div>
-      <p class="not-member">Don't have an account? <a href="register.html">Sign Up</a></p>
+      <div id="error-message" class="error-message" style="display: none;"></div>
     </div>
   </div>
+  
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      console.log("Login Form Data:", data); // Debugging line
+
+      try {
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data),
+          credentials: 'include' // Important for sending cookies
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          window.location.href = result.redirectUrl;
+        } else {
+          // Display error message in the UI
+          const errorElement = document.getElementById('error-message');
+          if (result.errors && result.errors.length > 0) {
+            // Display first validation error
+            errorElement.textContent = result.errors[0].msg;
+          } else if (result.msg) {
+            errorElement.textContent = result.msg;
+          }
+          errorElement.style.display = 'block';
+        }
+      } catch (error) {
+        console.error('Login Error:', error);
+        displayError('An error occurred during login. Please try again.');
+      }
+    });
+
+    function displayError(message) {
+      // Create an error message element if it doesn't exist
+      let errorElement = document.getElementById('error-message');
+      if (!errorElement) {
+        errorElement = document.createElement('div');
+        errorElement.id = 'error-message';
+        errorElement.className = 'error-message';
+        document.querySelector('.form-section').prepend(errorElement);
+      }
+      errorElement.textContent = message;
+      errorElement.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
