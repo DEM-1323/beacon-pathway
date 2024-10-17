@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pathway Assesment | Beacon Pathway</title>
+    <link rel="stylesheet" href="css/page_styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border-radius: 0.6rem;
+      }
+
+      html,
+      body {
+        height: 100%;
+        font-family: Inter;
+        font-size: 16px;
+        background-color: #fff;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+      }
+
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .page-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1.5rem 0 0 1.5rem;
+      }
+
+      .icon {
+        width: 28px;
+      }
+
+      .page-content {
+        flex: 1;
+        display: flex;
+        border: 1px solid black;
+        margin-top: 2rem;
+        width: 100%;
+      }
+
+      #coverPage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .big-icon img {
+        width: 217px;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #808080;
+      }
+
+      .description {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+        text-align: center;
+        margin-top: 1.5rem;
+        width: 50%;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      #start-quiz {
+        border: none;
+        margin-top: 1.5rem;
+        padding: 1.2rem;
+        width: 40%;
+        border-radius: 1rem;
+        background-color: #ff791f;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="page-header">
+        <span class="icon">
+          <img src="images/lighthouse_icon.png" />
+        </span>
+        > <a><span class="app-name">Beacon Pathway</span></a> >
+        <a><span class="page-title">Pathway Assesment</span></a>
+      </div>
+      <div class="page-content">
+        <div id="coverPage" class="active">
+          <span class="big-icon">
+            <img src="images/quiz_icon.png" />
+          </span>
+          <h2 class="tagline">Find Opportunities That Fit Your Path</h2>
+          <p class="description">
+            Not sure where to start or what resources can best support your
+            academic journey? This quick assessment will help you discover
+            valuable resources, study tips, and opportunities designed just for
+            you.
+          </p>
+          <button id="start-quiz" type="button" onclick="startQuiz()">
+            Start Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

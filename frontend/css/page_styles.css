@@ -146,5 +146,10 @@ body {
     margin-right: 0.5rem;
     height: calc(100% - 1rem);
     border-radius: 0.6rem;
-    background-color: gray;
+}
+
+.page-link {
+    overflow: hidden;
+    border: none;
+    border-radius: 0.6rem;
 }
