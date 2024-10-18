@@ -146,6 +146,16 @@ body {
     margin-right: 0.5rem;
     height: calc(100% - 1rem);
     border-radius: 0.6rem;
+<<<<<<< HEAD
+    background-color: gray;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+=======
 }
 
 .page-link {
@@ -153,3 +163,4 @@ body {
     border: none;
     border-radius: 0.6rem;
 }
+>>>>>>> eb02b298c141f0b0aa2d598b9f114e6739a56139

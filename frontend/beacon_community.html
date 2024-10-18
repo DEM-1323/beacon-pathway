@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beacon Community - UMass Boston Clubs</title>
+    <style>
+        /* CSS Styles */
+
+        /* Basic Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 18px;
+        }
+
+        /* Club Container */
+        .club-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Club Card */
+        .club-card {
+            position: relative;
+            width: 250px;
+            margin: 15px;
+            overflow: hidden;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .club-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Club Image */
+        .club-image img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        /* Club Info */
+        .club-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .club-info h2 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .club-description {
+            display: none; /* Hidden by default */
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Club Links */
+        .club-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .club-links a {
+            margin: 5px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .club-links a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hover Effects */
+        .club-card:hover .club-description {
+            display: block;
+        }
+
+        .club-card:hover .club-info h2 {
+            margin-bottom: 5px;
+        }
+
+        .club-card:hover .club-links {
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .club-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .club-card {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Beacon Community</h1>
+        <p>Explore the diverse clubs at UMass Boston</p>
+    </header>
+    <div class="club-container">
+        <!-- Club 1 -->
+        <div class="club-card">
+            <div class="club-image">
+                <img src="images/GamingClub.png" alt="Gaming Club">
+            </div>
+            <div class="club-info">
+                <h2>Gaming Club</h2>
+                <p class="club-description">Join us to build and program robots.</p>
+                <div class="club-links">
+                    <a href="https://discord.gg/robotics" target="_blank">Discord</a>
+                    <a href="https://umbdevelops.com/robotics" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Club 2 -->
+        <div class="club-card">
+            <div class="club-image">
+                <img src="images/club2.png" alt="Undergraduate Student Government">
+            </div>
+            <div class="club-info">
+                <h2>Undergraduate Student Government</h2>
+                <p class="club-description">Express your creativity through various art forms.</p>
+                <div class="club-links">
+                    <a href="https://discord.gg/art" target="_blank">Discord</a>
+                    <a href="https://umbdevelops.com/art" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Club 3 -->
+        <div class="club-card">
+            <div class="club-image">
+                <img src="images/Pokemonclub.png" alt="Pokemon Club">
+            </div>
+            <div class="club-info">
+                <h2>Pokemon Club</h2>
+                <p class="club-description">Collaborate on projects and improve your coding skills.</p>
+                <div class="club-links">
+                    <a href="https://discord.gg/7xdqeSrc" target="_blank">Discord</a>
+                    <a href="https://umb.campuslabs.com/engage/organization/pokemongo" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add more club cards as needed -->
+    </div>
+</body>
+</html>

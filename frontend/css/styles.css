@@ -139,4 +139,272 @@
   .sso-btn:hover {
     background-color: #2164d8;
   }
-  
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align items to the top of the container */
+}
+
+/* Opportunities Section */
+.opportunities-section {
+    max-width: 900px;
+    width: 100%;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Cards container */
+.opportunity-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Individual card styling */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: calc(33.333% - 20px); /* 3 cards per row */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* 1 card per row on mobile */
+    }
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html, body {
+    height: 100%;
+    font-family: Inter;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.app-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 3.5rem 1rem 1.5rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.app-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: auto;
+}
+.app-ver-number {
+    font-size: 0.7rem;
+}
+
+.navigation {
+    flex: 1;
+    padding-left: 1.5rem;
+}
+.navigation h4 {
+    font-size: 0.75rem;
+    padding: 0.5rem 0 1rem 0;
+    text-align: left;
+    color: gray;
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.navigation li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.navigation {
+    font-size: 24px;
+}
+
+.general,
+.tools {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.icon svg {
+    width: 20px;
+    height: 18px;
+}
+.nav-text {
+    font-size: 1rem;
+}
+
+.settings {
+    padding-left: 1.5rem;
+}
+
+.settings ul {
+    list-style-type: none;
+    padding: 0 0.5rem;
+    margin: 0;
+}
+
+.settings li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.settings li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.app-content {
+    flex: 8;
+    border: 1px solid #ededed;
+    margin-right: 0.5rem;
+    height: calc(100% - 1rem);
+    border-radius: 0.6rem;
+    background-color: gray;
+}
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background */
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0; /* Light border for separation */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333; /* Text color */
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Ensures it stays on top of other elements */
+}
+
+.breadcrumb-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px; /* Space between logo and text */
+    border-radius: 50%;
+}
+
+.breadcrumb-link {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+.breadcrumb-current {
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.breadcrumb span {
+    margin-right: 5px;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
