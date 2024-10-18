@@ -40,8 +40,7 @@
                 </a>
               </li>
               <li>
-                <a class="nav-item"
-                  ><span class="icon"
+                  <span class="icon"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -58,7 +57,7 @@
                       />
                     </svg>
                   </span>
-                  <span class="nav-text">Opportunities</span>
+                  <a class="nav-item" href="opportunities.html" id="opportunities-link">Opportunities</a>
                 </a>
               </li>
               <li>
@@ -80,7 +79,7 @@
                       />
                     </svg>
                   </span>
-                  <span class="nav-text">Beacon Community</span>
+                  <a class="nav-item" href="beacon_community.html" id="beacon_community-link">Beacon community</a>
                 </a>
               </li>
             </ul>
@@ -129,7 +128,7 @@
                       />
                     </svg>
                   </span>
-                  <span class="nav-text">Beacon Bot</span>
+                  <a class="nav-item" href="beaconbot.html" id="beaconbot-link">BeaconBot</a>
                 </a>
               </li>
             </ul>
@@ -191,7 +190,24 @@
           </ul>
         </div>
       </nav>
-      <div class="app-content"></div>
+      <iframe id="main-iframe" src="" title="Content" style="width: 200%; height: 100vh; border: none;"></iframe>
     </div>
+    <script>
+      document.getElementById('opportunities-link').addEventListener('click', function(event) {
+          event.preventDefault(); 
+          const iframe = document.getElementById('main-iframe'); 
+          iframe.src = 'opportunities.html'; 
+      });
+      document.getElementById('beaconbot-link').addEventListener('click', function(event) {
+          event.preventDefault(); 
+          const iframe = document.getElementById('main-iframe'); 
+          iframe.src = 'beaconbot.html'; 
+      });
+      document.getElementById('beacon_community-link').addEventListener('click', function(event) {
+          event.preventDefault(); 
+          const iframe = document.getElementById('main-iframe'); 
+          iframe.src = 'beacon_community.html'; 
+      });
+  </script>
   </body>
 </html>
