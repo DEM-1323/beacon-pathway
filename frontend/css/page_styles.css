@@ -148,3 +148,9 @@ body {
     border-radius: 0.6rem;
     background-color: gray;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+

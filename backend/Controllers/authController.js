@@ -68,7 +68,7 @@ exports.register = async (req, res) => {
           .status(200)
           .json({ 
             msg: "User registered successfully", 
-            redirectUrl: "/dashboard" 
+            redirectUrl: "/homepage" 
           });
       }
     );
@@ -137,7 +137,7 @@ exports.login = async (req, res) => {
           .status(200)
           .json({ 
             msg: "Logged in successfully", 
-            redirectUrl: "/dashboard" 
+            redirectUrl: "/homepage" 
           });
       }
     );
