@@ -18,7 +18,7 @@
           <nav class="general">
             <ul>
               <li>
-                <a class="nav-item">
+                <a class="nav-item" href="quiz.html" id="quiz-link">
                   <span class="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +40,7 @@
                 </a>
               </li>
               <li>
+                <a class="nav-item" href="opportunities.html" id="opportunities-link">
                   <span class="icon"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -57,11 +58,11 @@
                       />
                     </svg>
                   </span>
-                  <a class="nav-item" href="opportunities.html" id="opportunities-link">Opportunities</a>
+                  <span class="nav-text">Opportunities</span>
                 </a>
               </li>
               <li>
-                <a class="nav-item">
+                <a class="nav-item" href="beacon_community.html" id="beacon_community-link">
                   <span class="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +80,7 @@
                       />
                     </svg>
                   </span>
-                  <a class="nav-item" href="beacon_community.html" id="beacon_community-link">Beacon community</a>
+                  <span class="nav-text">Beacon community</span>
                 </a>
               </li>
             </ul>
@@ -110,11 +111,11 @@
                 </a>
               </li>
               <li>
-                <a class="nav-item">
+                <a class="nav-item" href="beaconbot.html" id="beaconbot-link">
                   <span class="icon">
                     <img src="images/beaconbot_icon.svg" />
                   </span>
-                  <a class="nav-item" href="beaconbot.html" id="beaconbot-link">BeaconBot</a>
+                  <span class="nav-text">BeaconBot</span>
                 </a>
               </li>
             </ul>
@@ -152,8 +153,8 @@
               >
             </li>
             <li>
-              <a class="nav-item"
-                ><span class="icon"
+              <a class="nav-item">
+                <span class="icon"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -176,9 +177,16 @@
           </ul>
         </div>
       </nav>
-      <iframe id="main-iframe" src="" title="Content" style="width: 200%; height: 100vh; border: none;"></iframe>
+      <div class="app-content">
+      <iframe id="main-iframe" src="quiz.html" title="Content" style="width: 100%; height: 100%; border: none;"></iframe>
     </div>
+  </div>
     <script>
+      document.getElementById('quiz-link').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        const iframe = document.getElementById('main-iframe'); 
+        iframe.src = 'quiz.html';
+      });
       document.getElementById('opportunities-link').addEventListener('click', function(event) {
           event.preventDefault(); 
           const iframe = document.getElementById('main-iframe'); 
