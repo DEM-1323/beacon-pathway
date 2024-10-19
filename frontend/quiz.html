@@ -3,324 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pathway Assesment | Beacon Pathway</title>
+    <title>Pathway Assessment | Beacon Pathway</title>
     <link rel="stylesheet" href="css/page_styles.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        border-radius: 0.6rem;
-        font-family: Inter;
-      }
-
-      html,
-      body {
-        height: 100%;
-        font-family: Inter;
-        font-size: clamp(8px, 14px 16px);
-        background-color: #fff;
-      }
-
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        width: 100%;
-      }
-
-      .page-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-
-      .page-header {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1.5rem 0 0 1.5rem;
-        font-weight: bold;
-      }
-
-      .icon {
-        width: 28px;
-      }
-
-      .page-title {
-        color: #808080;
-      }
-
-      .page-content {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-        width: 100%;
-      }
-
-      #coverPage {
-        display:none;
-      }
-
-
-      #coverPage.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 5%;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      .big-icon img {
-        width: 217px;
-      }
-
-      .tagline {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: #808080;
-      }
-
-      .description {
-        margin-top: 1.5rem;
-        width: 50%;
-        font-size: 1rem;
-        font-weight: 500;
-        text-align: center;
-        line-height: 1.5rem;
-        text-wrap: pretty;
-      }
-
-      #start-quiz {
-        border: none;
-        margin-top: 1.5rem;
-        padding: 1.2rem;
-        width: clamp(300px, min(40%, 400px), 600px);
-        border-radius: 1rem;
-        background-color: #ff791f;
-        color: #fff;
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: 700;
-      }
-
-      #quiz {
-        display: none;
-        overflow: hidden;
-      }
-
-      #quiz.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid #EDEDED;
-        margin-top: 5%;
-        width: clamp(600px, 40rem, 700px);
-        height: clamp(530px, 35rem, 600px);
-        border-radius: 1rem;
-      }
-
-      .question {
-        display: none;
-        padding: 1rem;
-        width: 100%;
-      }
-
-      .question.active {
-        display: block;
-      }
-
-      .question-header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-        padding-bottom: 0.5rem;
-        font-weight: bold;
-      }
-
-      .question-count {
-        margin-right: auto;
-        font-size: 0.75rem;
-        color: #808080;
-      }
-
-      .options {
-        list-style-type: none;
-        margin-top: 1rem;
-        padding: 0;
-      }
-
-      .options li {
-        margin-bottom: 0.5rem;
-      }
-
-      label {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-        border: 1px solid #ccc; 
-        padding: 0.75rem;
-        width: 100%;
-        border-radius: 8px;
-        cursor: pointer;
-        
-      }
-
-      input[type="radio"], input[type="checkbox"] {
-        display: none;
-      }
-
-      input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
-        background-color: #f0f0f0;
-        border-color: #0b5ed7;
-        color: #0b5ed7;
-      }
-
-      .option {
-        border: 1.5px solid #808080;
-        padding: 0.325rem 0.5rem;
-        height: 2rem;
-        width: 2rem;
-        border-radius: 0.3rem;
-        text-align: center;
-      }
-
-      .check.option {
-        border-radius: 4px;
-        display: inline-block;
-        position: relative;
-        transition: border-color 0.3s;
-      }
-
-      input[type="checkbox"]:checked + label .check.option::after {
-        content: "✔";
-        position: absolute;
-        left: 3px;
-        top: -8px;
-        font-size: 2rem;
-        color: #0b5ed7;
-      }
-
-      .button-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin-top: 1.25rem;
-        gap: 1rem;
-      }
-
-      .button-container button {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: 600;
-      }
-      #submit-button-container {
-        margin-top: 3.5rem;
-      }
-      .back-btn {
-        background-color: #808080;
-        color: white;
-      }
-
-      .next-btn, .submit-btn, .opportunities-btn {
-        background-color: #32BA7C;
-        color: white;
-      }
-
-      .btn-text {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .exit-btn {
-        background: none;
-        border: none;
-        color: #000;
-        font-size: 1.5rem;  /* Larger size for the X */
-        cursor: pointer;
-        padding: 0;
-        line-height: 1;
-        transition: color 0.3s;
-      }
-    
-      #quiz-complete {
-        display: none;
-        overflow: hidden;
-      }
-
-      #quiz-complete.active {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #EDEDED;
-        margin-top: 5%;
-        padding: 1rem;
-        width: clamp(600px, 40rem, 700px);
-        height: clamp(430px, 35rem, 510px);
-        background-color: #fff;
-        border-radius: 1rem;
-      }
-
-      #completion-message {
-        padding: 0.5rem 0;
-        text-align: left;
-      }
-
-      #next-steps{
-        font-size: 1rem;
-        font-weight: bold;
-        color:#808080
-      }
-
-      #thanks-message{
-        padding: 0.5rem 0;
-      }
-
-      #next-steps-list {
-        padding: 0.5rem 1.25rem
-      }
-
-      #next-steps-list li {
-        padding-bottom: 1.5rem;
-      }
-
-      #next-steps-list li:last-child {
-        padding-bottom: 0.5rem;
-      }
-
-      .retake-btn {
-        background: #FF4C4C;
-        color: #fff;
-      }
-    </style>
+    <link rel="stylesheet" href="css/pathway_assessment.css" />
   </head>
   <body>
     <div class="page-container">
       <div class="page-header">
         <span class="icon">
           <img src="images/lighthouse_icon.png" />
-        </span> >
-        <a><span class="app-name">Beacon Pathway</span></a> >
-        <a><span class="page-title">Pathway Assesment</span></a>
+        </span>
+        >
+        <a>
+          <span class="app-name">Beacon Pathway</span>
+        </a>
+        >
+        <a>
+          <span class="page-title">Pathway Assessment</span>
+        </a>
       </div>
       <div class="page-content">
-        <div id="coverPage" class="active">
+        <div id="coverPage">
           <span class="big-icon">
             <img src="images/quiz_icon.png" />
           </span>
@@ -341,124 +44,299 @@
               <h4 class="question-count">Question 1 of 3</h4>
               <button class="exit-btn" onclick="exitQuiz()">✕</button>
             </div>
-            <h2>Which college you are enrolled in?</h2>
+            <h2>Which college are you enrolled in?</h2>
             <ul class="options">
-                <li><input type="radio" id="college1" name="college" value="College of Science & Mathematics"><label for="college1"><span class="radio option">A</span> College of Science & Mathematics</label></li>
-                <li><input type="radio" id="college2" name="college" value="College of Liberal Arts"><label for="college2"><span class="radio option">B</span> College of Liberal Arts</label></li>
-                <li><input type="radio" id="college3" name="college" value="College of Management"><label for="college3"><span class="radio option">C</span> College of Management</label></li>
-                <li><input type="radio" id="college4" name="college" value="College of Education & Human Development"><label for="college4"><span class="radio option">D</span> College of Education & Human Development</label></li>
-                <li><input type="radio" id="college5" name="college" value="Manning College of Nursing & Health Sciences"><label for="college5"><span class="radio option">E</span> Manning College of Nursing & Health Sciences</label></li>
-                <li><input type="radio" id="college6" name="college" value="School for the Environment"><label for="college6"><span class="radio option">F</span> School for the Environment</label></li>
-              </ul>
-              <div class="button-container">
-                <button class="next-btn" onclick="nextQuestion(1)"><span class="btn-text">Next →</span></button>
-              </div>
+              <li>
+                <input
+                  type="radio"
+                  id="college1"
+                  name="college"
+                  value="College of Science & Mathematics"
+                />
+                <label for="college1">
+                  <span class="radio option">A</span>
+                  College of Science & Mathematics
+                </label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="college2"
+                  name="college"
+                  value="College of Liberal Arts"
+                />
+                <label for="college2">
+                  <span class="radio option">B</span>
+                  College of Liberal Arts
+                </label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="college3"
+                  name="college"
+                  value="College of Management"
+                />
+                <label for="college3">
+                  <span class="radio option">C</span>
+                  College of Management
+                </label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="college4"
+                  name="college"
+                  value="College of Education & Human Development"
+                />
+                <label for="college4">
+                  <span class="radio option">D</span>
+                  College of Education & Human Development
+                </label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="college5"
+                  name="college"
+                  value="Manning College of Nursing & Health Sciences"
+                />
+                <label for="college5">
+                  <span class="radio option">E</span>
+                  Manning College of Nursing & Health Sciences
+                </label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="college6"
+                  name="college"
+                  value="School for the Environment"
+                />
+                <label for="college6">
+                  <span class="radio option">F</span>
+                  School for the Environment
+                </label>
+              </li>
+            </ul>
+            <div class="button-container">
+              <button class="next-btn" onclick="nextQuestion(1)">
+                <span class="btn-text">Next →</span>
+              </button>
+            </div>
           </div>
-              <!-- Question 2 -->
-          <div id="question2" class="question ">
+          <!-- Question 2 -->
+          <div id="question2" class="question">
             <div class="question-header">
               <h4 class="question-count">Question 2 of 3</h4>
               <button class="exit-btn" onclick="exitQuiz()">✕</button>
             </div>
             <h2>What professional events are you most interested in?</h2>
             <ul class="options">
-              <li><input type="checkbox" id="event1" name="events" value="Career Fairs"><label for="event1"><span class="check option"></span>Career Fairs</label></li>
-              <li><input type="checkbox" id="event2" name="events" value="Portfolio Review Sessions"><label for="event2"><span class="check option"></span>Portfolio Review Sessions</label></li>
-              <li><input type="checkbox" id="event3" name="events" value="Hackathons"><label for="event3"><span class="check option"></span>Hackathons</label></li>
-              <li><input type="checkbox" id="event4" name="events" value="Skill Development Bootcamps"><label for="event4"><span class="check option"></span>Skill Development Bootcamps</label></li>
-              <li><input type="checkbox" id="event5" name="events" value="Industry Conferences"><label for="event5"><span class="check option"></span>Industry Conferences</label></li>
-              <li><input type="checkbox" id="event6" name="events" value="Networking Events"><label for="event6"><span class="check option"></span>Networking Events</label></li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="event1"
+                  name="events"
+                  value="Career Fairs"
+                />
+                <label for="event1">
+                  <span class="check option"></span>
+                  Career Fairs
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="event2"
+                  name="events"
+                  value="Portfolio Review Sessions"
+                />
+                <label for="event2">
+                  <span class="check option"></span>
+                  Portfolio Review Sessions
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="event3"
+                  name="events"
+                  value="Hackathons"
+                />
+                <label for="event3">
+                  <span class="check option"></span>
+                  Hackathons
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="event4"
+                  name="events"
+                  value="Skill Development Bootcamps"
+                />
+                <label for="event4">
+                  <span class="check option"></span>
+                  Skill Development Bootcamps
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="event5"
+                  name="events"
+                  value="Industry Conferences"
+                />
+                <label for="event5">
+                  <span class="check option"></span>
+                  Industry Conferences
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="event6"
+                  name="events"
+                  value="Networking Events"
+                />
+                <label for="event6">
+                  <span class="check option"></span>
+                  Networking Events
+                </label>
+              </li>
             </ul>
             <div class="button-container">
-              <button class="back-btn" onclick="previousQuestion(2)"><span class="btn-text">← Back</span></button>
-              <button class="next-btn" onclick="nextQuestion(2)"><span class="btn-text">Next →</span></button>
+              <button class="back-btn" onclick="previousQuestion(2)">
+                <span class="btn-text">← Back</span>
+              </button>
+              <button class="next-btn" onclick="nextQuestion(2)">
+                <span class="btn-text">Next →</span>
+              </button>
             </div>
           </div>
-
           <!-- Question 3 -->
           <div id="question3" class="question">
             <div class="question-header">
               <h4 class="question-count">Question 3 of 3</h4>
               <button class="exit-btn" onclick="exitQuiz()">✕</button>
             </div>
-            <h2>What are the top challenges you face in your academic development?</h2>
+            <h2>
+              What are the top challenges you face in your academic development?
+            </h2>
             <ul class="options">
-              <li><input type="checkbox" id="challenge1" name="challenges" value="Resume building"><label for="challenge1"><span class="check option"></span>Resume building</label></li>
-              <li><input type="checkbox" id="challenge2" name="challenges" value="Interview prep"><label for="challenge2"><span class="check option"></span>Interview prep</label></li>
-              <li><input type="checkbox" id="challenge3" name="challenges" value="Finding internships"><label for="challenge3"><span class="check option"></span>Finding internships</label></li>
-              <li><input type="checkbox" id="challenge4" name="challenges" value="Gaining experience"><label for="challenge4"><span class="check option"></span>Gaining experience</label></li>
-              <li><input type="checkbox" id="challenge5" name="challenges" value="I am not sure"><label for="challenge5"><span class="check option"></span>I am not sure</label></li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="challenge1"
+                  name="challenges"
+                  value="Resume building"
+                />
+                <label for="challenge1">
+                  <span class="check option"></span>
+                  Resume building
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="challenge2"
+                  name="challenges"
+                  value="Interview prep"
+                />
+                <label for="challenge2">
+                  <span class="check option"></span>
+                  Interview prep
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="challenge3"
+                  name="challenges"
+                  value="Finding internships"
+                />
+                <label for="challenge3">
+                  <span class="check option"></span>
+                  Finding internships
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="challenge4"
+                  name="challenges"
+                  value="Gaining experience"
+                />
+                <label for="challenge4">
+                  <span class="check option"></span>
+                  Gaining experience
+                </label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="challenge5"
+                  name="challenges"
+                  value="I am not sure"
+                />
+                <label for="challenge5">
+                  <span class="check option"></span>
+                  I am not sure
+                </label>
+              </li>
             </ul>
             <div class="button-container" id="submit-button-container">
-              <button class="back-btn" onclick="previousQuestion(3)"><span class="btn-text">← Back</span></button>
-              <button class="submit-btn" onclick="submitQuiz()"><span class="btn-text">Get Results</span></button>
+              <button class="back-btn" onclick="previousQuestion(3)">
+                <span class="btn-text">← Back</span>
+              </button>
+              <button class="submit-btn" onclick="submitQuiz()">
+                <span class="btn-text">Get Results</span>
+              </button>
             </div>
           </div>
-
-          
-      </div>
-      <div id="quiz-complete">
-            <h2 id="completion-message">Congratulations on Completing the Quiz! 🎉</h2>
-            <p id="next-steps">Your Next Steps to Academic Success</p>
-            <p id="thanks-message">Thank you for taking the time to complete the quiz! Based on your answers, we’ve 
-              tailored some personalized resources and recommendations to help you continue on 
-              your academic journey</p>
-              <ol id="next-steps-list">
-                <li><u><b>Explore Your Results:</b></u> Click on the Opportunities tab in the side navigation to review your quiz performance and gain insights into your strengths and areas for improvement. Don’t forget to check out the Beacon Community to discover different UMass Boston Discord servers where you can connect with peers!</li>
-                <li><u><b>Leverage Smart Tools:</b></u> Check out our <b>Beacon Bot</b> in the side navigation, an AI chatbot that answers school-related questions, and use the <b>Schedule Builder</b> to upload your degree audit and generate classes tailored to your academic goals.</li>
-                <li><u><b>Don’t Like Your Results?:</b></u> Click Retake Quiz below to try again!</li>
-              </ol>
-              <div class="button-container">
-                <button class="retake-btn" onclick="exitQuiz()">Retake Quiz</button>
-                <button class="opportunities-btn" onclick="">Opportunities</button>
-              </div>
+        </div>
+        <div id="quiz-complete">
+          <h2 id="completion-message">
+            Congratulations on Completing the Quiz! 🎉
+          </h2>
+          <p id="next-steps">Your Next Steps to Academic Success</p>
+          <p id="thanks-message">
+            Thank you for taking the time to complete the quiz! Based on your
+            answers, we’ve tailored some personalized resources and
+            recommendations to help you continue on your academic journey
+          </p>
+          <ol id="next-steps-list">
+            <li>
+              <u><b>Explore Your Results:</b></u> Click on the Opportunities tab
+              in the side navigation to review your quiz performance and gain
+              insights into your strengths and areas for improvement. Don’t
+              forget to check out the Beacon Community to discover different
+              UMass Boston Discord servers where you can connect with peers!
+            </li>
+            <li>
+              <u><b>Leverage Smart Tools:</b></u> Check out our
+              <b>Beacon Bot</b> in the side navigation, an AI chatbot that
+              answers school-related questions, and use the
+              <b>Schedule Builder</b> to upload your degree audit and generate
+              classes tailored to your academic goals.
+            </li>
+            <li>
+              <u><b>Don’t Like Your Results?:</b></u> Click Retake Quiz below to
+              try again!
+            </li>
+          </ol>
+          <div class="button-container">
+            <button class="retake-btn" onclick="retakeQuiz()">
+              Retake Quiz
+            </button>
+            <button class="opportunities-btn" onclick="goToOpportunitiesPage()">
+              Opportunities
+            </button>
           </div>
+        </div>
+      </div>
     </div>
-    <script>
-
-      function startQuiz() {
-        document.getElementById('coverPage').classList.remove('active');
-        document.getElementById('quiz').classList.add('active');
-        document.getElementById('question1').classList.add('active');
-      }
-      // Function to move to the next question
-      function nextQuestion(current) {
-        document.getElementById(`question${current}`).classList.remove('active');
-        document.getElementById(`question${current + 1}`).classList.add('active');
-      }
-  
-      // Function to go back to the previous question
-      function previousQuestion(current) {
-        document.getElementById(`question${current}`).classList.remove('active');
-        document.getElementById(`question${current - 1}`).classList.add('active');
-      }
-  
-      // Function to submit the quiz (you can extend this to process or send the data)
-      function submitQuiz() {
-        alert('Quiz submitted! You can process or send the data here.');
-        document.getElementById('quiz').classList.remove('active');
-        document.getElementById('quiz-complete').classList.add('active');
-      }
-
-      // Function to reset the quiz and bring users back to the cover page
-      function exitQuiz() {
-        // Hide all questions and results
-        document.querySelectorAll('.question').forEach(function(question) {
-          question.classList.remove('active');
-        });
-        document.getElementById('quiz-complete').classList.remove('active');
-        //document.getElementById('result').classList.remove('active');
-
-        // Reset form
-        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(function(input) {
-          input.checked = false;
-        });
-
-        document.getElementById('quiz').classList.remove('active');
-        // Bring the user back to the cover page
-        document.getElementById('coverPage').classList.add('active');
-        
-      }
-    </script>
+    <script src="js/quiz_logic.js"></script>
   </body>
 </html>
