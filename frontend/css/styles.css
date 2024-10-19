@@ -431,34 +431,3 @@ body.dark-mode {
 .logout-btn.dark-mode {
     background-color: #bb3300;
 }
-.page-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .page-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1.5rem 0 0 1.5rem;
-    font-weight: bold;
-  }
-
-  .icon {
-    width: 28px;
-  }
-
-  .page-title {
-    color: #808080;
-  }
-
-  .page-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    width: 100%;
-  }
