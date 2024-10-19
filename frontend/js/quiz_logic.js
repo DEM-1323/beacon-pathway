@@ -72,3 +72,6 @@ function exitQuiz() {
   document.getElementById("quiz").classList.remove("active");
   document.getElementById("coverPage").classList.add("active");
 }
+function goToOpportunitiesPage() {
+  window.location.href = "opportunities.html"; 
+}
