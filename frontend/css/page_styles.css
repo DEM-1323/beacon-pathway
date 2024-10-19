@@ -4,12 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-html, body {
+html,
+body {
     height: 100%;
     font-family: Inter;
-    font-size: 16px;
+    font-size: clamp(8px, 14px, 16px);
     background-color: #fff;
 }
 
@@ -142,13 +143,13 @@ body {
 
 .app-content {
     flex: 7.5;
-    border: 1px solid #ededed;
+    border: 2px solid #ededed;
     margin-right: 0.5rem;
     height: calc(100% - 1rem);
     border-radius: 0.6rem;
 }
 
-.page-link {
+#main-iframe {
     overflow: hidden;
     border: none;
     border-radius: 0.6rem;
@@ -180,3 +181,39 @@ body.dark-mode {
 
 /* Add more dark mode styles as needed */
 
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem 0 0 1.5rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.app-name, .page-title {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.icon {
+    width: 28px;
+}
+
+.page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+}
