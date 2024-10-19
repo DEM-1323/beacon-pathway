@@ -25,7 +25,7 @@
 
         /* Chatbot Header */
         #chatbot-header {
-            background-color: #007bff;
+            background-color: #ff6600;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -109,9 +109,48 @@
         #chatbot-messages::-webkit-scrollbar-track {
             background-color: #f1f1f1;
         }
+        .page-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .page-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1.5rem 0 0 1.5rem;
+        font-weight: bold;
+      }
+
+      .icon {
+        width: 28px;
+      }
+
+      .page-title {
+        color: #808080;
+      }
+
+      .page-content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        width: 100%;
+      }
     </style>
 </head>
 <body>
+    <div class="page-container"> 
+        <div class="page-header">
+          <span class="icon">
+            <img src="images/logo.top.png" />
+          </span> >
+          <a><span class="app-name">Beacon Pathway</span></a> >
+          <a><span class="page-title">Beacon Bot</span></a>
+    </div>
     <!-- Chatbot Structure -->
     <div id="chatbot">
         <div id="chatbot-header">
@@ -131,6 +170,10 @@
         // Keywords and responses
         const responses = [
             {
+                keywords: ["hey", "Hey", "Hi", "Hello", "hello"],
+                response: "Hello, how can i help you today?"
+            },
+            {
                 keywords: ["library", "hours"],
                 response: "The library is open from 8 AM to 10 PM on weekdays and 10 AM to 6 PM on weekends."
             },
@@ -140,11 +183,11 @@
             },
             {
                 keywords: ["academic advising", "contact", "advisor"],
-                response: "You can contact Academic Advising at (617) 287-5500 or visit their office in the Campus Center."
+                response: "You can find information about academic advising on https://www.umb.edu/academics/advising/ or visit their office in the Campus Center."
             },
             {
                 keywords: ["event", "events", "happening", "today", "next", "upcoming"],
-                response: "You can check upcoming events on the UMass Boston events calendar at https://www.umb.edu/events."
+                response: "You can check upcoming events on the UMass Boston events calendar at https://www.umb.edu/events/."
             },
             {
                 keywords: ["wifi", "wi-fi", "internet", "access"],
@@ -152,19 +195,19 @@
             },
             {
                 keywords: ["parking", "parking information"],
-                response: "Parking information is available at https://www.umb.edu/the_university/getting_here/parking."
+                response: "Parking information is available at https://www.umb.edu/transportation/parking-rates/"
             },
             {
                 keywords: ["reset", "password", "forgot"],
-                response: "You can reset your password by visiting the IT Service Desk or online at https://www.umb.edu/it/password_reset."
+                response: "You can reset your password by visiting the IT Service Desk or online at https://www.umb.edu/it/software-systems/password/"
             },
             {
                 keywords: ["uaccess", "resource", "groceries", "bedding"],
-                response: "UMass Boston's U-ACCESS is a resource center that provides groceries, bedding, and other essentials for students in need. Visit https://www.umb.edu/life_on_campus/uaccess for more information."
+                response: "UMass Boston's U-ACCESS is a resource center that provides groceries, bedding, and other essentials for students in need. Visit https://www.umb.edu/campus-life/current-students/u-access/ for more information."
             },
             {
-                keywords: ["career fair", "job fair", "careers", "jobs"],
-                response: "The Career Services office hosts regular career fairs and workshops. Check out their schedule at https://www.umb.edu/academics/vpass/career_services/events."
+                keywords: ["career fair", "job fair", "careers", "jobs", "Career Fair"],
+                response: "The Career Services office hosts regular career fairs and workshops. The next career fair is on Wednesday, November 13, 2024 (Time:10am - 1pm) Check out their schedule at https://aces.umb.edu/events/2024/11/13/fall-career-expo-2024/"
             },
             // Add more keyword-response pairs here
         ];

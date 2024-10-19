@@ -16,8 +16,8 @@
         header {
             text-align: center;
             padding: 20px;
-            background-color: #007bff;
-            color: #fff;
+            background-color:white;
+            color: black;
         }
 
         header h1 {
@@ -92,15 +92,15 @@
         .club-links a {
             margin: 5px;
             text-decoration: none;
-            color: #fff;
-            background-color: #007bff;
+            color: white;
+            background-color: #ff6600;
             padding: 8px 12px;
             border-radius: 5px;
             font-size: 14px;
         }
 
         .club-links a:hover {
-            background-color: #0056b3;
+            background-color: #e65c00;
         }
 
         /* Hover Effects */
@@ -127,12 +127,76 @@
                 width: 80%;
             }
         }
+
+        /* Flexbox Enhancement for 4 Cards per Row */
+        @media (min-width: 1200px) {
+            .club-card {
+                width: calc(25% - 30px); /* 4 cards per row with margins */
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .club-card {
+                width: calc(33.33% - 30px); /* 3 cards per row */
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .club-card {
+                width: calc(50% - 30px); /* 2 cards per row */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .club-card {
+                width: 80%; /* 1 card per row on small screens */
+            }
+        }
+        .page-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .page-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1.5rem 0 0 1.5rem;
+        font-weight: bold;
+      }
+
+      .icon {
+        width: 28px;
+      }
+
+      .page-title {
+        color: #808080;
+      }
+
+      .page-content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        width: 100%;
+      }
     </style>
 </head>
 <body>
+    <div class="page-container">
+        <div class="page-header">
+          <span class="icon">
+            <img src="images/logo.top.png" />
+          </span> >
+          <a><span class="app-name">Beacon Pathway</span></a> >
+          <a><span class="page-title">Beacon Community</span></a>
+    </div>
     <header>
         <h1>Beacon Community</h1>
-        <p>Explore the diverse clubs at UMass Boston</p>
+        <p>Explore the diverse clubs at UMass Boston! Below are links to either Discord servers or LinkedIn pages, along with UMBInvolved links affiliated with each club. Click to join and start connecting with the UMass Boston community. </p>
     </header>
     <div class="club-container">
         <!-- Club 1 -->
@@ -142,10 +206,10 @@
             </div>
             <div class="club-info">
                 <h2>Gaming Club</h2>
-                <p class="club-description">Join us to build and program robots.</p>
+                <p class="club-description">The UMB Gaming is an organization that hopes to create a safe and laidback enviorment for all students to meet and socialize. Our organization hosts bi-weekly tournaments with prizes.</p>
                 <div class="club-links">
-                    <a href="https://discord.gg/robotics" target="_blank">Discord</a>
-                    <a href="https://umbdevelops.com/robotics" target="_blank">Learn More</a>
+                    <a href="https://discord.gg/mQbbsCnukz" target="_blank">Discord</a>
+                    <a href="https://umb.campuslabs.com/engage/organization/umbgaming" target="_blank">Learn More</a>
                 </div>
             </div>
         </div>
@@ -158,8 +222,8 @@
                 <h2>Undergraduate Student Government</h2>
                 <p class="club-description">Express your creativity through various art forms.</p>
                 <div class="club-links">
-                    <a href="https://discord.gg/art" target="_blank">Discord</a>
-                    <a href="https://umbdevelops.com/art" target="_blank">Learn More</a>
+                    <a href="https://www.linkedin.com/company/undergraduate-student-government--university-of-massachusetts-boston/posts/?feedView=all" target="_blank">LinkedIn</a>
+                    <a href="https://umb.campuslabs.com/engage/organization/studentgovernmentassociation" target="_blank">Learn More</a>
                 </div>
             </div>
         </div>
@@ -170,14 +234,81 @@
             </div>
             <div class="club-info">
                 <h2>Pokemon Club</h2>
-                <p class="club-description">Collaborate on projects and improve your coding skills.</p>
+                <p class="club-description">Collaborate and play Pokemon together.</p>
                 <div class="club-links">
                     <a href="https://discord.gg/7xdqeSrc" target="_blank">Discord</a>
                     <a href="https://umb.campuslabs.com/engage/organization/pokemongo" target="_blank">Learn More</a>
                 </div>
             </div>
         </div>
-        
+        <!-- Club 4 -->
+        <div class="club-card">
+            <div class="club-image">
+                <img src="images/csclub.jpeg" alt="Computer Science Club">
+            </div>
+            <div class="club-info">
+                <h2>Computer Science Club</h2>
+                <p class="club-description">Collaborate on projects and improve your coding skills.</p>
+                <div class="club-links">
+                    <a href="https://discord.gg/7xdqeSrc" target="_blank">Discord</a>
+                    <a href="https://umb.campuslabs.com/engage/organization/cs_club" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Club 5 -->
+        <div class="club-card">
+            <div class="club-image">
+                <img src="images/Neuroscience.png" alt="Neuroscience Club">
+            </div>
+            <div class="club-info">
+                <h2>Neuroscience Club</h2>
+                <p class="club-description">Learn about the field of neuroscience and its related subjects.</p>
+                <div class="club-links">
+                    <a href="https://discord.gg/neuroscience" target="_blank">Discord</a>
+                    <a href="https://umb.campuslabs.com/engage/organization/neuroscienceclub" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="club-card">
+            <div class="club-image">
+                <img src="images/Investment.png" alt="Investment Club">
+            </div>
+            <div class="club-info">
+                <h2>Investment Club</h2>
+                <p class="club-description">Learn how to properly invest their money into the stock market.</p>
+                <div class="club-links">
+                    <a href="https://discord.gg/ct7pRtzK" target="_blank">Discord</a>
+                    <a href="https://umb.campuslabs.com/engage/organization/umbinvest" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="club-card">
+            <div class="club-image">
+                <img src="images/Climbing.png" alt="Climbing Club">
+            </div>
+            <div class="club-info">
+                <h2>Climbing Club</h2>
+                <p class="club-description">Making climbing more accessible to the UMB community. </p>
+                <div class="club-links">
+                    <a href="https://discord.gg/zuzwrnQZ" target="_blank">Discord</a>
+                    <a href="https://umb.campuslabs.com/engage/organization/umbclimbingclub" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="club-card">
+            <div class="club-image">
+                <img src="images/Sustainability.png" alt="Sustainability Club">
+            </div>
+            <div class="club-info">
+                <h2>Sustainability Club</h2>
+                <p class="club-description">To empower students and faculty to advocate for our planet and ourselves starting right here at UMB</p>
+                <div class="club-links">
+                    <a href="https://discord.gg/EKHB8suM" target="_blank">Discord</a>
+                    <a href="https://umb.campuslabs.com/engage/organization/sustainabilityclub" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add more club-card divs as needed -->
     </div>
 </body>
 </html>

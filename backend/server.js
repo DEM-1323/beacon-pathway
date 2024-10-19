@@ -60,36 +60,24 @@ app.get('/opportunities', (req, res) => {
 
 app.get('/beaconbot', (req,res)=> {
     res.sendFile(path.join(__dirname, '../frontend/beaconbot.html'));
-})
+});
 
 app.get('/beacon_community', (req,res)=> {
     res.sendFile(path.join(__dirname, '../frontend/beacon_community.html'));
-})
-
-app.get('/api/opportunities', (req, res) => {
-    const opportunities = [
-        {
-            id: 1,
-            title: "PEAAI AI Symposium",
-            description: "Discover innovative AI applications in education and industry at the Paul English AI Symposium.",
-            image: "/images/PEAII.png"
-        },
-        {
-            id: 2,
-            title: "Computer Science Club",
-            description: "Join the UMass Boston Computer Science Club to enhance your coding skills.",
-            image: "/images/cs_club.jpg"
-        },
-        {
-            id: 3,
-            title: "CSS Battle Dev",
-            description: "Sharpen your coding skills by competing in CSS dev battles.",
-            image: "/images/css_battle.jpg"
-        }
-        // Add more opportunities as needed
-    ];
-    res.json(opportunities);
 });
+
+app.get('/Schedule_Builder', (req,res)=> {
+    res.sendFile(path.join(__dirname, '../frontend/Schedule_Builder.html'));
+});
+
+app.get('/settings', (req,res)=> {
+    res.sendFile(path.join(__dirname, '../frontend/settings.html'));
+});
+
+app.get('/logout', (req,res)=> {
+    res.sendFile(path.join(__dirname, '../frontend/logout.html'));
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout | Beacon Pathway</title>
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Logout Container */
+        .logout-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            width: 100vw;
+            text-align: center;
+        }
+
+        /* Heading */
+        .logout-container h1 {
+            font-size: 28px;
+            color: #333333;
+            margin-bottom: 20px;
+            margin-top: 270px;
+        }
+
+        /* Message */
+        .logout-container p {
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+
+        /* Login Button */
+        .login-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #ff6600;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #e65c00;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .logout-container {
+                padding: 20px;
+            }
+
+            .logout-container h1 {
+                font-size: 24px;
+            }
+
+            .logout-container p {
+                font-size: 14px;
+            }
+
+            .login-btn {
+                font-size: 15px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logout-container">
+        <h1>Logged Out</h1>
+        <p>You have been successfully logged out. Thank you for visiting Beacon Pathway!</p>
+        <!-- This link will open the login page in the entire window -->
+        <a href="login.html" class="login-btn" target="_top">Log Back In</a>
+    </div>
+
+</body>
+</html>

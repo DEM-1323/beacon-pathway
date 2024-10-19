@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Beacon Pathway</title>
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Settings Container */
+        .settings-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height:100vh;
+            max-width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        /* Heading */
+        .settings-container h1 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #333333;
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Labels */
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555555;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* Input Fields */
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333333;
+            font-size: 15px;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        /* Disabled Inputs */
+        .form-group input[disabled] {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+            color: #555555;
+        }
+
+        /* Centering the Change Email Button */
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Change Email Button */
+        .changeemail-btn {
+            display: block;
+            width: 200px; /* Set a fixed width */
+            text-align: center;
+            padding: 12px 0;
+            background-color: #ff6600;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .changeemail-btn:hover {
+            background-color: #e65c00;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .settings-container {
+                padding: 20px;
+            }
+
+            .settings-container h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+
+            .form-group input {
+                font-size: 14px;
+                padding: 8px 10px;
+            }
+
+            .changeemail-btn {
+                font-size: 15px;
+                padding: 10px 0;
+            }
+        }
+        .page-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .page-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1.5rem 0 0 1.5rem;
+        font-weight: bold;
+      }
+
+      .icon {
+        width: 28px;
+      }
+
+      .page-title {
+        color: #808080;
+      }
+
+      .page-content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        width: 100%;
+      }
+    </style>
+</head>
+<body>
+    <div class="page-container"> 
+        <div class="page-header">
+          <span class="icon">
+            <img src="images/logo.top.png" />
+          </span> >
+          <a><span class="app-name">Beacon Pathway</span></a> >
+          <a><span class="page-title">Settings</span></a>
+    </div>
+
+    <div class="settings-container">
+        <h1>Settings</h1>
+        <!-- Last Name -->
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" value="Ahmed" disabled>
+        </div>
+        <!-- Email Address -->
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" value="mustafarocks619@gmail.com" disabled>
+        </div>
+        <!-- Centering the Button -->
+        <div class="button-container">
+            <a href="#" class="changeemail-btn">Change Email Address</a>
+        </div>
+    </div>
+
+</body>
+</html>
