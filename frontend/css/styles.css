@@ -431,3 +431,13 @@ body.dark-mode {
 .logout-btn.dark-mode {
     background-color: #bb3300;
 }
+a {
+    text-decoration: none; 
+    color: inherit;
+  }
+  
+  a:hover {
+    color: #000000; 
+    text-decoration: underline; 
+  }
+  
