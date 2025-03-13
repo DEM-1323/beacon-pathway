@@ -97,7 +97,7 @@ The project's success at the hackathon demonstrates its potential value to the U
 
 ## 📸 Screenshots
 
-![Home Page](https://raw.githubusercontent.com/yourusername/beacon-pathway/main/assets/screenshots/home.png)
+![Home Page](project-showcase/images/BeaconPathway_SignIn.png)
 ![Resource Quiz](https://raw.githubusercontent.com/yourusername/beacon-pathway/main/assets/screenshots/quiz.png)
 ![Schedule Builder](https://raw.githubusercontent.com/yourusername/beacon-pathway/main/assets/screenshots/schedule.png)
 
