@@ -90,7 +90,7 @@ The project's success at the hackathon demonstrates its potential value to the U
 
 ## 🔗 Links
 
-- ![Project Demo](https://yourusername.github.io/beacon-pathway)
+- [Project Demo](https://drive.google.com/file/d/1Diryy0vZhJyvjm0xdjpoHbfq5mEL0mL4/view?usp=sharing)
 - [Hackathon Information](https://ai.umb.edu/events/)
 - [Hackathon Presentation Recording](https://youtu.be/9pKTI7CGK68?t=2243)
 - [Original Inspiration Article](https://medium.com/@clarasantiago/feeling-stuck-navigating-unfulfilled-dreams-in-college)
