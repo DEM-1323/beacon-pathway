@@ -103,6 +103,4 @@ The project's success at the hackathon demonstrates its potential value to the U
 ![Schedule Builder](project-showcase/images/BeaconPathway_ScheduleBuilder.png)
 ![Beacon Bot](project-showcase/images/BeaconPathway_BeaconBot.png)
 
----
 
-*Note: Replace placeholder paths with actual image paths once you upload images to your repository.*
