@@ -1,8 +1,0 @@
-{
-  "/(auth)/auth/signout/route": "app/(auth)/auth/signout/route.js",
-  "/(auth)/auth/callback/route": "app/(auth)/auth/callback/route.js",
-  "/page": "app/page.js",
-  "/(auth)/login/page": "app/(auth)/login/page.js",
-  "/(main)/dashboard/page": "app/(main)/dashboard/page.js",
-  "/(main)/profile/page": "app/(main)/profile/page.js"
-}
